@@ -1,5 +1,6 @@
 # Summary
 
 * [Introduction](README.md)
-* [Linux](linux.md)
+
+* [Ubuntu](ubuntu.md)
 
