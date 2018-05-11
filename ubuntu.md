@@ -100,5 +100,7 @@ sudo echo 'xcompmgr' >> /etc/rc.local
 
 ```sh
 sudo apt-get install -y docker.io
-# todo 
+sudo groupadd docker
+sudo gpasswd -a ${USER} docker
+sudo service docker restart  # sudo systemctl restart docker
 ```
