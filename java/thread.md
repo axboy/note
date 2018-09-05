@@ -16,3 +16,9 @@
 * todo
 
 在Java SE5引入Callabel接口
+
+- 线程池
+
+corePoolSize        线程池中初始线程数量，可能处于等待状态
+maximunPoolSize     线程池中最大允许线程数量
+keepAliveTime       超出corePoolSize部分线程如果等待这个时间将被回收

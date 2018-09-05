@@ -54,3 +54,4 @@ let appendLine = (line) => {
 }
 
 start()
+console.log("成功生成目录");

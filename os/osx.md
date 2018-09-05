@@ -3,51 +3,87 @@
 1. 触控板和鼠标滚轮分开设置滚动方向，安装Scroll Reverser。
 
 1. brew
+```sh
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+    - 替换国内源
+    ```sh
+    cd "$(brew --repo)"
+    git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
+    cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+    git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
     ```
-        ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
+    - 使用官方源
+    ```sh
+    cd "$(brew --repo)"
+    git remote set-url origin https://github.com/Homebrew/brew.git 
+    cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
+    git remote set-url origin https://github.com/Homebrew/homebrew-core.git 
     ```
+
 
 1. 配置环境
-    ```
-        ######## jdk
-        JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_121.jdk/Contents/Home
-        JAVA_HOME=$JAVA_8_HOME
-        CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
-        PATH=$JAVA_HOME/bin:$PATH:
 
-        export JAVA_HOME
-        export CLASSPATH
-        export PATH
+```sh
+#!/bin/bash
 
-        ####### grails
-        GRAILS_3_HOME=/Users/zcw/Soft/grails/grails-3.1.8
-        GRAILS_2_HOME=/Users/zcw/Soft/grails/grails-2.5.4
-        GRAILS_HOME=$GRAILS_3_HOME
-        export PATH=$PATH:$GRAILS_HOME/bin
+# git tips
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
-        ####### maven
-        M2_HOME=/Users/zcw/Soft/maven/apache-maven-3.3.9
-        export PATH=$PATH:$M2_HOME/bin
+# source .bashrc
+if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+fi
 
-        ####### gradle
-        GRADLE_HOME=/Users/zcw/Soft/gradle/gradle-3.4
-        export GRADLE_HOME
-        export PATH=$PATH:$GRADLE_HOME/bin
-    ```
-1. nginx
-    ```
-        docker run -d -p 80:80 --name qh-nginx\
-            -v /Users/zcw/Soft/nginx:/etc/nginx/conf.d \
-            -v /Users/zcw/Soft/nginx/logs:/var/log/nginx \
-            -v /Users/zcw/work:/data nginx
-    ```
+# 设置终端ls颜色
+export LS_OPTIONS='--color=auto'
+export CLICOLOR='Yes'
+# export LSCOLORS='CxfxcxdxbxegedabagGxGx'    #指定颜色
 
-1. mysql
-    ```
-        docker run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root mysql
-    ```
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\W\[\033[00m\]\$ '
 
-1. mongodb
-    ```
-        docker run -p 27017:27017 -v ~/db:/data/db -d mongo3.2
-    ```
+####### jdk
+JAVA_8_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_172.jdk/Contents/Home
+JAVA_HOME=$JAVA_8_HOME
+CLASSPATH=.:$JAVA_HOME/lib/dt.jar:$JAVA_HOME/lib/tools.jar
+PATH=$JAVA_HOME/bin:$PATH:
+
+export JAVA_HOME
+export CLASSPATH
+export PATH
+
+####### maven
+M2_HOME=/Users/zcw/Soft/Maven/apache-maven-3.5.3
+export PATH=$PATH:$M2_HOME/bin
+
+####### android
+ANDROID_HOME=/Users/zcw/Soft/Android/android-sdk-macosx
+export ANDROID_HOME
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+####### gradle
+GRADLE_HOME=/Users/zcw/Soft/Gradle/gradle-4.1
+export GRADLE_HOME
+export PATH=$PATH:$GRADLE_HOME/bin
+
+####### sonar-scaner
+SONAR_SCANNER_HOME=/Users/zcw/Soft/sonar-scanner
+export PATH=$PATH:$SONAR_SCANNER_HOME/bin
+
+####### brew
+export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles
+export HOMEBREW_NO_AUTO_UPDATE=true
+```
+
+1. MicroSoft Office 修改语言
+
+[参考](https://answers.microsoft.com/en-us/msoffice/forum/msoffice_other-mso_mac-mso_mac2016/how-to-manually-change-the-language-used-in-office/abe2a9c1-f550-45de-9d0e-58b99f206c41)
+
+```sh
+defaults write com.microsoft.Word AppleLanguages '("zh-cn")'
+defaults write com.microsoft.Excel AppleLanguages '("zh-cn")'
+defaults write com.microsoft.Powerpoint AppleLanguages '("zh-cn")'
+```
