@@ -5,3 +5,12 @@
 * [Preview on gitpages](https://axboy.github.io/note/)
 
 * [Preview on gitbook](https://axboy.gitbook.io/note/)
+
+### run
+
+```sh
+npm install -g gitbook-cli
+gitbook update
+npm i
+gitbook serve
+```
