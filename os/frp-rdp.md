@@ -44,7 +44,7 @@ frpc -c frpc.ini
 exit 
 ```
 
-添加到服务自启，cmd执行以下命令，binPath未绝对路径
+添加到服务自启，cmd执行以下命令，binPath为绝对路径
 
 ```cmd
 sc create frp binPath=C:\Soft\frp\auto_frp.bat start=auto
