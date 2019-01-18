@@ -2,6 +2,7 @@
 - [Introduction](README.md)
 
 - db
+  - [elastic search](./db/elastic search.md)
   - [influxdb](./db/influxdb.md)
   - [mongodb](./db/mongodb.md)
   - [mysql](./db/mysql.md)
@@ -17,7 +18,6 @@
   - [String](./java/String.md)
   - dubbo
     - [hello-dubbo](./java/dubbo/hello-dubbo.md)
-  - [elastic-search](./java/elastic-search.md)
   - [level](./java/level.md)
   - [thread](./java/thread.md)
 - os

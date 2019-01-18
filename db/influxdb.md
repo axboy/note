@@ -1,4 +1,4 @@
-# influxdb[(参考官方文档1.7)](https://docs.influxdata.com/influxdb/v1.7/)
+# influxdb
 
 Influxdb是一个开源的时序型数据库，使用Go语言编写，被广泛应用于存储系统的监控数据、IoT行业的实时数据等场景。
 有以下特性：
@@ -17,9 +17,16 @@ Influxdb是一个开源的时序型数据库，使用Go语言编写，被广泛�
     - fields: 各种记录的值
     - time: 数据记录的时间戳，自动建索引
 
-### docker
+- series(FIX ME)
 
-- [docker doc](https://hub.docker.com/_/influxdb)
+> 所有在数据库中的数据，都需要通过图表来展示，而这个series表示这个表里面的数据，可以在图表上画成几条线：通过tags排列组合算出来。
+
+```sh
+
+show series from table
+```
+
+### docker安装
 
 - 生成配置文件
 
@@ -31,13 +38,20 @@ docker run --rm influxdb influxd config > influxdb.conf
 
 ```sh
 docker run -d --name influxdb \
-    -v `pwd`/conf:/etc/influxdb \
     -v `pwd`/data:/var/lib/influxdb \
     -p 8086:8086 \
     influxdb
+
+# 启用管理界面，需要1.3.0以下
+docker run -d --name influxdb \
+    -v `pwd`/data:/var/lib/influxdb \
+    -e INFLUXDB_ADMIN_ENABLED=true \
+    -p 8086:8086 \
+    -p 8083:8083 \
+    influxdb:1.1.0
 ```
 
-### 命令行操作[参考文章](https://www.cnblogs.com/shhnwangjian/p/6897216.html?utm_source=itdadao&utm_medium=referral)
+### 命令行操作
 
 - 数据库操作
 
@@ -93,4 +107,40 @@ drop retention policy "rp_name" on "db_name"
 
 ### Http请求
 
-> TODO
+```sh
+# 创建demo1数据库
+curl -POST http://192.168.2.10:8086/query \
+    --data-urlencode "q=create database demo1"
+
+# 删除demo1数据库
+curl -POST http://192.168.2.10:8086/query \
+    --data-urlencode "q=create database demo1"
+
+# 插入一条数据
+curl -i -XPOST 'http://192.168.2.10:8086/write?db=demo1' \
+    --data-binary 'table,tag1=a field1=1 1434055562000000000'
+
+# 插入多条数据
+curl -i -XPOST 'http://192.168.2.10:8086/write?db=demo1' \
+    --data-binary 'cpu_load_short,host=server02 value=0.67
+        cpu_load_short,host=server02,region=us-west value=0.55 1422568543702900257
+        cpu_load_short,direction=in,host=server01,region=us-west value=2.0 1422568543702900257'
+```
+
+- http api响应
+
+```text
+2xx     204代表no content，200代表InfluxDB可以接收请求但是没有完成请求。一般会在body体中带有出错信息。
+4xx     InfluxDB不能解析请求。
+5xx     系统出现错误。
+```
+
+### 参考文档
+
+- [官方文档1.7](https://docs.influxdata.com/influxdb/v1.7/)
+
+- [docker doc](https://hub.docker.com/_/influxdb)
+
+- [博客园-shhnwangjian](https://www.cnblogs.com/shhnwangjian/p/6897216.html?utm_source=itdadao&utm_medium=referral))
+
+- [Linux大学](https://www.linuxdaxue.com/influxdb-study-series-manual.html)
