@@ -2,9 +2,8 @@
 - [Introduction](README.md)
 
 - db
-  - Mongo DB
-    - [MongoDB安装](./db/Mongo DB/MongoDB安装.md)
-    - [mongodb](./db/Mongo DB/mongodb.md)
+  - [influxdb](./db/influxdb.md)
+  - [mongodb](./db/mongodb.md)
   - [mysql](./db/mysql.md)
   - [rds to local](./db/rds to local.md)
   - [redis](./db/redis.md)
