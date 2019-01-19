@@ -36,7 +36,7 @@ docker run --rm influxdb influxd config > influxdb.conf
 
 - 运行
 
-```sh
+```
 docker run -d --name influxdb \
     -v `pwd`/data:/var/lib/influxdb \
     -p 8086:8086 \

@@ -11,6 +11,7 @@
 ```sh
 npm install -g gitbook-cli
 gitbook update
+gitbook install
 npm i
 gitbook serve
 ```

@@ -3,7 +3,7 @@ let path = require("path")
 
 let finalContent = `# Summary\n- [Introduction](README.md)\n\n` //最终输出到文件的内容
 let baseDir = "."                                               //遍历的起始文件夹
-let exceptDir = ['_book', '.git', 'node_modules', 'unsorted']   //排除的文件
+let exceptDir = ['_book', '.git', 'node_modules', 'unsorted', 'images']   //排除的文件
 let targetFile = './SUMMARY.md'                                 //目标文件
 
 //start

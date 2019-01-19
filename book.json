@@ -1,0 +1,36 @@
+{
+    "title": "笔记",
+    "author": "axboy",
+    "language": "zh-hans",
+    "plugins": [
+        "copy-code-button",
+        "anchors",
+        "donate",
+        "3-ba",
+        "terminal",
+        "tbfed-pagefooter"
+    ],
+    "pluginsConfig": {
+        "donate": {
+            "wechat": "/note/images/wxpay.png",
+            "alipay": "/note/images/wxpay.png",
+            "title": "",
+            "button": "赏",
+            "alipayText": "支付宝",
+            "wechatText": "微信"
+        },
+        "3-ba": {
+            "token": "affdcc846dc488b83e30ede10e1d1abe"
+        },
+        "terminal": {
+            "copyButtons": true,
+            "fade": false,
+            "style": "flat"
+        },
+        "tbfed-pagefooter": {
+            "copyright": "Copyright &copy axboy.cn 2019",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        }
+    }
+}
