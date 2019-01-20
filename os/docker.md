@@ -2,6 +2,9 @@
 
 ```sh
 docker rmi $(docker images -q -f dangling=true)
+docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
+docker rmi -f $(docker images | grep "month" | awk "{print \$3}")
+docker rmi -f $(docker images | grep "week" | awk "{print \$3}")
 ```
 
 - 查看镜像支持的环境变量
