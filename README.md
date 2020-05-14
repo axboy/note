@@ -9,7 +9,7 @@
 ### run
 
 ```sh
-npm install -g gitbook-cli
+sudo npm install -g gitbook-cli
 gitbook update
 gitbook install
 npm i
