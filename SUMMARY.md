@@ -15,6 +15,7 @@
 - ide
   - [intellij-idea](./ide/intellij-idea.md)
 - java
+  - [jvm](./java/jvm.md)
   - [String](./java/String.md)
   - dubbo
     - [hello-dubbo](./java/dubbo/hello-dubbo.md)
