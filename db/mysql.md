@@ -53,8 +53,48 @@ REVOKE privilege ON databasename.tablename FROM 'username'@'host';
 flush privileges; 
 ```
 
-## 行锁和表锁
+## 理论
 
+### 关系型数据库
+- 基于关系代数理论
+- 缺点，二维表显示，表结构不直观、实现复杂，速度慢
+- 优点，健壮性高，社区庞大
+
+### 隔离级别
+```
+Read uncommitted
+Read committed
+Repeatable Reads
+Serializable
+```
+
+### 索引
+
+- b树
+- m阶 b+树
+
+每个非叶子节点（除根外）至多有2m个儿子，至少有m/2个儿子
+根节点（如果不是叶子）至少有两个儿子
+所有叶子节点在同一层
+
+- 作用
+加快查找速度
+约束数据的值
+
+- 分类
+clustered index, 索引直接存值，每个表至多一个，一般是主键
+Non-clustered index, 索引保存的是一个地址，可以有多个
+
+### 连接池
+
+- Tomcat JDBC Connection pool
+maxActive,最多多少个连接，默认100
+maxIdle，最多多少个空连接，默认100
+minIdle，至少多少个空连接，默认10
+initialSize，初始化的连接，默认10
+maxWait，最长等待时间，默认30000，30s
+
+## 行锁和表锁
 
 - 建测试表、初始化数据
 ```
