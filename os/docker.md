@@ -1,6 +1,6 @@
 # Docker
 
-- 安装
+## 安装
 
 ```
 # https://docs.docker.com/engine/install/centos/
@@ -39,6 +39,34 @@ EOF
 systemctl daemon-reload
 ```
 
+## Docker 日志
+
+### 日志驱动
+
+```
+none        容器不输出任何日志
+json-file   以json格式写入文件
+syslog      写入宿主机的Syslog中
+journald    写入宿主机的Journald
+fluentd     写入宿主机的Fluentd
+gelf        以GELF格式写入GrayLog
+awslogs     写入aws CloudWatch Logs
+splunk      写入Splunk中
+etwlogs     写入etw中(Event Tracing for windows)
+gcplogs     写入Google cloud platform
+nats        写入NATS服务器
+```
+
+- 启动时指定
+
+```
+docker run -d --name nginx \
+  --log-drriver json-file \
+  --log-opt max-size=100m \
+  --log-opt max-file=5 \
+  nginx
+```
+
 - 设置日志驱动
 ```
 tee /etc/docker/daemon.json << 'EOF'
@@ -54,6 +82,8 @@ tee /etc/docker/daemon.json << 'EOF'
 EOF
 ```
 
+## 其他
+
 - 批量清理临时镜像文件
 
 ```sh
@@ -68,10 +98,6 @@ docker rmi -f $(docker images | grep "week" | awk "{print \$3}")
 ```sh
 docker run IMAGE env
 ```
-
-- 本地镜像文件存储在/var/lib/docker/下
-
-#
 
 - [Deis](http://deis.io)
 
