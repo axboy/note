@@ -3,23 +3,28 @@
 
 - db
   - [elastic search](./db/elastic search.md)
+  - [elk](./db/elk.md)
   - [influxdb](./db/influxdb.md)
   - [mongodb](./db/mongodb.md)
   - [mysql](./db/mysql.md)
   - [rds to local](./db/rds to local.md)
   - [redis](./db/redis.md)
+  - [zookeeper](./db/zookeeper.md)
 - golang
   - [安装环境](./golang/安装环境.md)
 - hr
+  - [interview](./hr/interview.md)
   - [java](./hr/java.md)
 - ide
   - [intellij-idea](./ide/intellij-idea.md)
 - java
-  - [jvm](./java/jvm.md)
   - [String](./java/String.md)
+  - [concurrency](./java/concurrency.md)
   - dubbo
     - [hello-dubbo](./java/dubbo/hello-dubbo.md)
+  - [jvm](./java/jvm.md)
   - [level](./java/level.md)
+  - [mycat](./java/mycat.md)
   - [thread](./java/thread.md)
 - os
   - [docker](./os/docker.md)
@@ -27,5 +32,6 @@
   - [linux](./os/linux.md)
   - [net](./os/net.md)
   - [osx](./os/osx.md)
+  - [raspberry-pi](./os/raspberry-pi.md)
   - [ubuntu](./os/ubuntu.md)
   - [win10](./os/win10.md)
