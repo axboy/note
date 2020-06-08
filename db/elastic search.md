@@ -6,6 +6,18 @@
 
 - 轻松横向扩展，可支持PB级别的结构化或非结构化数据处理
 
+### ES配置说明
+```
+#elasticsearch.yml
+cluster.name                集群名称，以此作为同一集群的判断矫健
+node.name                   节点名称，以此作为集群中不同节点的区分条件
+network.host/http.port      网络地址、端口，用于http和transport服务的使用
+path.data                   数据存储地址
+path.log                    日志存储地址
+
+#命令行修改: bin/elasticsearch -Ehttp.port=9200
+```
+
 ### 应用场景
 
 - 海量数据分析引擎

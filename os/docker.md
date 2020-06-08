@@ -3,7 +3,7 @@
 ## 安装
 
 ```
-# https://docs.docker.com/engine/install/centos/
+> https://docs.docker.com/engine/install/centos/
 $ sudo yum install -y yum-utils
 $ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
 $ sudo yum install docker-ce docker-ce-cli containerd.io
@@ -99,14 +99,167 @@ docker rmi -f $(docker images | grep "week" | awk "{print \$3}")
 docker run IMAGE env
 ```
 
-- [Deis](http://deis.io)
+## 常用镜像(单机版)
 
-- seagull
+- MySQL
 
-```sh
-docker run --name seagull -d \
-    -p 10086:10086 \
-    -v /var/run/docker.sock:/var/run/docker.sock \
-    tobegit3hub/seagull
+```
+docker run -d --name mysql \
+  -p 3306:3306 \
+  -e MYSQL_ROOT_PASSWORD=123456 \
+  -v `pwd`/conf.d:/etc/mysql/conf.d \
+  -v `pwd`/data:/var/lib/mysql \
+  --restart always \
+  mysql:8.0
+
+# my.cnf
+[mysqld]
+datadir=/var/lib/mysql
+default-time_zone = '+8:00'
 ```
 
+- Redis
+
+```
+docker run -d --name redis \
+  -p 6379:6379 \
+  redis:5.0.9 \
+  --requirepass "123456"
+```
+
+- nginx
+
+```
+docker run -d --name nginx \
+  -p 80:80 -p 443:443 \
+  -v `pwd`/conf.d:/etc/nginx/conf.d \
+  -v `pwd`/logs:/var/log/nginx \
+  -v `pwd`/data:/data \
+  -restart always \
+  nginx:1.9
+```
+
+- rabbitmq
+
+```
+docker run -d --name rabbitmq \
+    -p 15672:15672 \
+    -p 5672:5672 \
+    -e RABBITMQ_DEFAULT_USER=admin \
+    -e RABBITMQ_DEFAULT_PASS=admin \
+    --restart always \
+    rabbitmq:3.8.4-managemnet
+```
+
+- InfluxDB
+```
+docker run -d --name influxdb \
+    -p 8086:8086 \
+    -v `pwd`/db:/var/lib/influxdb \
+    influxdb
+```
+
+- Grafana
+
+- cAdvisor
+
+- Zipkin
+```
+docker run -d --name zipkin \
+    -p 9411:9411 \
+    openzipkin/zipkin
+```
+
+- MongoDB
+
+- [ElasticSearch](https://hub.docker.com/_/elasticsearch)
+
+```
+docker run -d --name es \
+    -p 9200:9200 \
+    -p 9300:9300 \
+    -v `pwd`/data:/usr/share/elasticsearch/data \
+    -v `pwd`/logs:/usr/share/elasticsearch/logs \
+    -v `pwd`/readonlyrest.yml:/usr/share/elasticsearch/config/readonlyrest.yml \
+    -e "discovery.type=single-node" \
+    -e "cluster.name=es-docker-cluster" \
+    -e "ES_JAVA_OPTS=-Xms512m -Xmx512m" \
+    -e "TZ=Asia/Shanghai" \
+    --restart always \
+    elasticsearch:7.7.0
+
+> readonlyrest.yml
+readonlyrest:
+    access_control_rules:
+        - name: "Require HTTP Basic Auth"
+    type: allow
+    auth_key: admin:123456
+```
+
+- LogStash
+
+```
+docker run -d --name logstash \
+    -p 5000:5000 \
+    --link es:es \
+    -v `pwd`/logstash.yml:/usr/share/logstash/config/logstash.yml \
+    -v `pwd`/logstash.conf:/usr/share/logstash/pipeline/logstash.conf \
+    logstash:7.7.0
+
+> logstash.yml
+http.host: "0.0.0.0"
+xpack.monitoring.enabled: false
+xpack.monitoring.elasticsearch.hosts: ["http://es:9200"]
+
+> logstash.conf
+input {
+  stdin{
+  }
+  syslog{
+    type => "rsyslog"
+    port => 4560
+  }
+}
+output{
+  stdout{
+  }
+  elasticsearch{
+    hosts => ["es:9200"]
+    user => "admin"
+    password => "123456"
+  }
+}
+```
+
+- Kibana
+
+```
+docker run -d --name kibana \
+    -p 5601:5601 \
+    --link es:es \
+    -e "ELASTICSEARCH_URL=http://es:9200" \
+    -e "ELASTICSEARCH_USERNAME=admin" \
+    -e "ELASTICSEARCH_PASSWORD=123456" \
+    -e "TZ=Asia/Shanghai" \
+    kibana:7.7.0
+```
+
+- Nacos
+```
+docker run -d --name nacos \
+    --link mysql:mysql \
+    -p 8848:8848 \
+    -p 9555:9555 \
+    -v `pwd`/mysql:/home/nacos/plugins/mysql \
+    -v `pwd`/logs:/home/nacos/logs \
+    -v `pwd`/custom.properties:/home/nacos/init.d/custom.properties \
+    -e PREFER_HOST_MODE=hostname \
+    -e MODE=standalone \
+    -e SPRING_DATASOURCE_PLATFORM=mysql \
+    -e MYSQL_SERVICE_HOST=mysql \
+    -e MYSQL_SERVICE_DB_NAME=nacos_dev \
+    -e MYSQL_SERVICE_PORT=3306 \
+    -e MTSQL_SERVICE_USER=root \
+    -e MYSQL_SERVICE_PASSWORD=123456
+    nacos/nacos-server:latest
+```
