@@ -4,10 +4,11 @@
     "language": "zh-hans",
     "gitbook": "3.2.3",
     "plugins": [
-        "copy-code-button@^0.0.2",
         "anchors@^0.7.1",
         "3-ba@^0.9.0",
         "terminal@^0.3.2",
+        "code",
+        "codeblock-filename",
         "tbfed-pagefooter@^0.0.1"
     ],
     "pluginsConfig": {
@@ -20,7 +21,7 @@
             "style": "flat"
         },
         "tbfed-pagefooter": {
-            "copyright": "Copyright &copy axboy.cn 2019",
+            "copyright": "Copyright &copy axboy.cn 2021",
             "modify_label": "该文件修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         }

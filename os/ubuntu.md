@@ -22,7 +22,7 @@ alias ll='ls -lF'
 
 #### 桌面图标
 
-```
+```sh
 #复制已有应用的图标
 ll /usr/share/applications/*.desktop
 cp /usr/share/applications/firefox.desktop ~/Desktop
@@ -41,9 +41,7 @@ Type=Application
 
 #### 快捷键修改
 
-vi ~/.config/openbox/lubuntu-rc.xml
-openbox --reconfigure
-```xml
+```xml:~/.config/openbox/lubuntu-rc.xml
 <!-- Launch scrot when Print is pressed -->
 <keybind key="Print">
     <action name="Execute">
@@ -75,6 +73,11 @@ openbox --reconfigure
     </action>
 </keybind>
 -->
+```
+
+```sh
+# 修改后执行
+openbox --reconfigure
 ```
 
 #### 挂载exfat磁盘
