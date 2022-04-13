@@ -3,13 +3,13 @@
 
 - archived
   - db
-    - [elastic search](./archived/db/elastic search.md)
+    - [elastic-search](./archived/db/elastic-search.md)
     - [elk](./archived/db/elk.md)
     - [etcd](./archived/db/etcd.md)
     - [influxdb](./archived/db/influxdb.md)
     - [mongodb](./archived/db/mongodb.md)
     - [mysql](./archived/db/mysql.md)
-    - [Percona Restore](./archived/db/Percona Restore.md)
+    - [Percona-Restore](./archived/db/Percona-Restore.md)
     - [redis](./archived/db/redis.md)
     - [zookeeper](./archived/db/zookeeper.md)
   - golang
@@ -33,8 +33,6 @@
     - [String](./archived/java/String.md)
     - [thread](./archived/java/thread.md)
   - os
-    - [docker-matchine](./archived/os/docker-matchine.md)
-    - [docker-swarm](./archived/os/docker-swarm.md)
     - [docker](./archived/os/docker.md)
     - [frp-rdp](./archived/os/frp-rdp.md)
     - [linux](./archived/os/linux.md)
