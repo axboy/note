@@ -5,6 +5,8 @@
     "gitbook": "3.2.3",
     "plugins": [
         "anchors@^0.7.1",
+        "expandable-chapters",
+        "chapter-fold",
         "3-ba@^0.9.0",
         "terminal@^0.3.2",
         "code",
@@ -21,7 +23,7 @@
             "style": "flat"
         },
         "tbfed-pagefooter": {
-            "copyright": "Copyright &copy axboy.cn 2021",
+            "copyright": "Copyright &copy axboy.cn 2022",
             "modify_label": "该文件修订时间：",
             "modify_format": "YYYY-MM-DD HH:mm:ss"
         }
