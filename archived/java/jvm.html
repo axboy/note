@@ -1,0 +1,1035 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>jvm · 笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="axboy">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="level.html" />
+    
+    
+    <link rel="prev" href="io.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    archived
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    db
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../db/elastic-search.html">
+            
+                <a href="../db/elastic-search.html">
+            
+                    
+                    elastic-search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../db/elk.html">
+            
+                <a href="../db/elk.html">
+            
+                    
+                    elk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../db/etcd.html">
+            
+                <a href="../db/etcd.html">
+            
+                    
+                    etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../db/influxdb.html">
+            
+                <a href="../db/influxdb.html">
+            
+                    
+                    influxdb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../db/mongodb.html">
+            
+                <a href="../db/mongodb.html">
+            
+                    
+                    mongodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../db/mysql.html">
+            
+                <a href="../db/mysql.html">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../db/Percona-Restore.html">
+            
+                <a href="../db/Percona-Restore.html">
+            
+                    
+                    Percona-Restore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../db/redis.html">
+            
+                <a href="../db/redis.html">
+            
+                    
+                    redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.9" data-path="../db/zookeeper.html">
+            
+                <a href="../db/zookeeper.html">
+            
+                    
+                    zookeeper
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    golang
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../golang/安装环境.html">
+            
+                <a href="../golang/安装环境.html">
+            
+                    
+                    安装环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    hr
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../hr/interview.html">
+            
+                <a href="../hr/interview.html">
+            
+                    
+                    interview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../hr/java.html">
+            
+                <a href="../hr/java.html">
+            
+                    
+                    java
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    ide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../ide/intellij-idea.html">
+            
+                <a href="../ide/intellij-idea.html">
+            
+                    
+                    intellij-idea
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="concurrency.html">
+            
+                <a href="concurrency.html">
+            
+                    
+                    concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="design-pattern.html">
+            
+                <a href="design-pattern.html">
+            
+                    
+                    design-pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="feign.html">
+            
+                <a href="feign.html">
+            
+                    
+                    feign
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="hello-dubbo.html">
+            
+                <a href="hello-dubbo.html">
+            
+                    
+                    hello-dubbo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.5" data-path="io.html">
+            
+                <a href="io.html">
+            
+                    
+                    io
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.5.6" data-path="jvm.html">
+            
+                <a href="jvm.html">
+            
+                    
+                    jvm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.7" data-path="level.html">
+            
+                <a href="level.html">
+            
+                    
+                    level
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.8" data-path="mycat.html">
+            
+                <a href="mycat.html">
+            
+                    
+                    mycat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.9" data-path="netty.html">
+            
+                <a href="netty.html">
+            
+                    
+                    netty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.10" data-path="oauth2.html">
+            
+                <a href="oauth2.html">
+            
+                    
+                    oauth2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.11" data-path="String.html">
+            
+                <a href="String.html">
+            
+                    
+                    String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.12" data-path="thread.html">
+            
+                <a href="thread.html">
+            
+                    
+                    thread
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" >
+            
+                <span>
+            
+                    
+                    os
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../os/docker.html">
+            
+                <a href="../os/docker.html">
+            
+                    
+                    docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../os/frp-rdp.html">
+            
+                <a href="../os/frp-rdp.html">
+            
+                    
+                    frp-rdp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../os/linux.html">
+            
+                <a href="../os/linux.html">
+            
+                    
+                    linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="../os/net.html">
+            
+                <a href="../os/net.html">
+            
+                    
+                    net
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.5" data-path="../os/osx.html">
+            
+                <a href="../os/osx.html">
+            
+                    
+                    osx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.6" data-path="../os/raspberry-pi.html">
+            
+                <a href="../os/raspberry-pi.html">
+            
+                    
+                    raspberry-pi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.7" data-path="../os/ubuntu.html">
+            
+                <a href="../os/ubuntu.html">
+            
+                    
+                    ubuntu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.8" data-path="../os/win10.html">
+            
+                <a href="../os/win10.html">
+            
+                    
+                    win10
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >jvm</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="jdk"><a name="jdk" class="plugin-anchor" href="#jdk"><i class="fa fa-link" aria-hidden="true"></i></a>jdk</h2>
+<p>&#x9996;&#x5148;&#x770B;&#x4E00;&#x4E0B;jdk&#x7684;&#x7EC4;&#x6210;&#xFF0C;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;&#xFF0C;Java&#x7A0B;&#x5E8F;&#x8BBE;&#x8BA1;&#x8BED;&#x8A00;&#x3001;Java&#x865A;&#x62DF;&#x673A;&#x3001;Java API&#x7C7B;&#x5E93;&#xFF0C;&#x7EDF;&#x79F0;&#x4E3A;jdk.
+<img src="../../images/java/java.png" alt="java"></p>
+<h2 id="jvm"><a name="jvm" class="plugin-anchor" href="#jvm"><i class="fa fa-link" aria-hidden="true"></i></a>jvm</h2>
+<h3 id="&#x8FD0;&#x884C;&#x65F6;&#x6570;&#x636E;&#x533A;"><a name="&#x8FD0;&#x884C;&#x65F6;&#x6570;&#x636E;&#x533A;" class="plugin-anchor" href="#&#x8FD0;&#x884C;&#x65F6;&#x6570;&#x636E;&#x533A;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8FD0;&#x884C;&#x65F6;&#x6570;&#x636E;&#x533A;</h3>
+<ul>
+<li><p>&#x7A0B;&#x5E8F;&#x8BA1;&#x6570;&#x5668;(Program counter register)</p>
+<p>  &#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x6240;&#x6267;&#x884C;&#x5B57;&#x8282;&#x7801;&#x7684;&#x884C;&#x53F7;&#x6307;&#x793A;&#x5668;&#xFF0C;&#x7EBF;&#x7A0B;&#x79C1;&#x6709;</p>
+</li>
+<li><p>Java&#x865A;&#x62DF;&#x673A;&#x6808;(Java Virtual Machine Stacks)</p>
+<p>  &#x6BCF;&#x4E2A;&#x7EBF;&#x7A0B;&#x6267;&#x884C;&#x7684;&#x65B9;&#x6CD5;&#x6808;&#xFF0C;&#x6BCF;&#x4E2A;&#x65B9;&#x6CD5;&#x4E3A;&#x4E00;&#x4E2A;&#x6808;&#x5E27;&#x3002;
+  &#x6808;&#x5E27;&#x5305;&#x542B;&#x5C40;&#x90E8;&#x53D8;&#x91CF;&#x8868;&#x3001;&#x64CD;&#x4F5C;&#x6570;&#x6808;&#x3001;&#x52A8;&#x6001;&#x94FE;&#x63A5;&#x3001;&#x65B9;&#x6CD5;&#x51FA;&#x53E3;&#x3002;</p>
+</li>
+<li><p>&#x672C;&#x5730;&#x65B9;&#x6CD5;&#x6808;(Native Methed Stack)</p>
+<p>  native&#x65B9;&#x6CD5;&#x6808;&#xFF0C;&#x4F5C;&#x7528;&#x7C7B;&#x4F3C;Java&#x865A;&#x62DF;&#x673A;&#x6808;&#xFF0C;&#x9762;&#x5411;&#x5BF9;&#x8C61;&#x4E0D;&#x540C;&#x3002;</p>
+</li>
+<li><p>Java&#x5806;(Java Heap)</p>
+<p>  &#x5927;&#x90E8;&#x5206;Java&#x5BF9;&#x8C61;&#x5B58;&#x653E;&#x7684;&#x4F4D;&#x7F6E;</p>
+</li>
+<li><p>&#x65B9;&#x6CD5;&#x533A;(Method Area)</p>
+<p>  &#x5B58;&#x50A8;&#x5DF2;&#x88AB;&#x865A;&#x62DF;&#x673A;&#x52A0;&#x8F7D;&#x7684;&#x7C7B;&#x4FE1;&#x606F;&#x3001;&#x5E38;&#x91CF;&#x3001;&#x9759;&#x6001;&#x53D8;&#x91CF;&#x3001;&#x5373;&#x65F6;&#x7F16;&#x8BD1;&#x5668;&#x7F16;&#x8BD1;&#x540E;&#x7684;&#x4EE3;&#x7801;&#x7B49;&#x6570;&#x636E;</p>
+</li>
+<li><p>&#x8FD0;&#x884C;&#x65F6;&#x5E38;&#x91CF;&#x6C60;
+  &#x65B9;&#x6CD5;&#x533A;&#x7684;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x7528;&#x4E8E;&#x4FDD;&#x5B58;&#x7F16;&#x8BD1;&#x671F;&#x751F;&#x6210;&#x7684;&#x5404;&#x79CD;&#x5B57;&#x9762;&#x91CF;&#x548C;&#x7B26;&#x53F7;&#x5F15;&#x7528;&#xFF0C;&#x7C7B;&#x52A0;&#x8F7D;&#x540E;&#x8FDB;&#x5165;&#x5E38;&#x91CF;&#x6C60;</p>
+</li>
+<li><p>&#x76F4;&#x63A5;&#x5185;&#x5B58;
+  &#x975E;&#x865A;&#x62DF;&#x673A;&#x8FD0;&#x884C;&#x65F6;&#x6570;&#x636E;&#x533A;&#x4E00;&#x90E8;&#x5206;&#xFF0C;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;native&#x5206;&#x914D;&#x7684;&#x5806;&#x5916;&#x5185;&#x5B58;&#x4E0D;&#x53D7;&#x865A;&#x62DF;&#x673A;&#x7BA1;&#x7406;</p>
+</li>
+</ul>
+<h3 id="&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x5E03;&#x5C40;"><a name="&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x5E03;&#x5C40;" class="plugin-anchor" href="#&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x5E03;&#x5C40;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;&#x7684;&#x5185;&#x5B58;&#x5E03;&#x5C40;</h3>
+<ul>
+<li><p>&#x5BF9;&#x8C61;&#x5934;(Header)</p>
+<p>  HotSpot&#x865A;&#x62DF;&#x673A;&#x7684;&#x5BF9;&#x8C61;&#x5934;&#x5305;&#x62EC;&#x4E24;&#x90E8;&#x5206;&#x4FE1;&#x606F;&#xFF0C;&#x7B2C;&#x4E00;&#x90E8;&#x5206;&#x7528;&#x4E8E;&#x5B58;&#x50A8;&#x5BF9;&#x8C61;&#x81EA;&#x8EAB;&#x7684;&#x8FD0;&#x884C;&#x65F6;&#x6570;&#x636E;&#xFF0C;&#x5982;&#x54C8;&#x5E0C;&#x7801;&#xFF08;HashCode&#xFF09;&#x3001;GC&#x5206;&#x4EE3;&#x5E74;&#x9F84;&#x3001;&#x9501;&#x72B6;&#x6001;&#x6807;&#x5FD7;&#x3001;&#x7EBF;&#x7A0B;&#x6301;&#x6709;&#x7684;&#x9501;&#x3001;&#x504F;&#x5411;&#x7EBF;&#x7A0B;ID&#x3001;&#x504F;&#x5411;&#x65F6;&#x95F4;&#x6233;&#x7B49;&#xFF0C;&#x8FD9;&#x90E8;&#x5206;&#x6570;&#x636E;&#x7684;&#x957F;&#x5EA6;&#x5728;32&#x4F4D;&#x548C;64&#x4F4D;&#x7684;&#x865A;&#x62DF;&#x673A;&#xFF08;&#x672A;&#x5F00;&#x542F;&#x538B;&#x7F29;&#x6307;&#x9488;&#xFF09;&#x4E2D;&#x5206;&#x522B;&#x4E3A;32bit&#x548C;64bit&#xFF0C;&#x5B98;&#x65B9;&#x79F0;&#x5B83;&#x4E3A;&quot;MarkWord&quot;&#x3002;
+  &#x5BF9;&#x8C61;&#x5934;&#x7684;&#x53E6;&#x5916;&#x4E00;&#x90E8;&#x5206;&#x662F;&#x7C7B;&#x578B;&#x6307;&#x9488;&#xFF0C;&#x5373;&#x5BF9;&#x8C61;&#x6307;&#x5411;&#x5B83;&#x7684;&#x7C7B;&#x5143;&#x6570;&#x636E;&#x7684;&#x6307;&#x9488;&#xFF0C;&#x865A;&#x62DF;&#x673A;&#x901A;&#x8FC7;&#x8FD9;&#x4E2A;&#x6307;&#x9488;&#x6765;&#x786E;&#x5B9A;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x662F;&#x54EA;&#x4E2A;&#x7C7B;&#x7684;&#x5B9E;&#x4F8B;&#x3002;</p>
+</li>
+<li><p>&#x5B9E;&#x4F8B;&#x6570;&#x636E;(Instance data)</p>
+</li>
+<li>&#x5BF9;&#x9F50;&#x586B;&#x5145;(padding)</li>
+</ul>
+<h2 id="gc"><a name="gc" class="plugin-anchor" href="#gc"><i class="fa fa-link" aria-hidden="true"></i></a>gc</h2>
+<p>&#x9996;&#x5148;&#x81F4;&#x547D;&#x4E09;&#x8FDE;&#xFF1A;What? When? How?</p>
+<h2 id="&#x8981;&#x56DE;&#x6536;&#x4EC0;&#x4E48;"><a name="&#x8981;&#x56DE;&#x6536;&#x4EC0;&#x4E48;" class="plugin-anchor" href="#&#x8981;&#x56DE;&#x6536;&#x4EC0;&#x4E48;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x8981;&#x56DE;&#x6536;&#x4EC0;&#x4E48;</h2>
+<p>&#x5806;&#x4E2D;&#x5B58;&#x653E;&#x7740;&#x51E0;&#x4E4E;&#x6240;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;&#x5982;&#x4F55;&#x786E;&#x5B9A;&#x54EA;&#x4E9B;&#x5BF9;&#x8C61;&#x5DF2;&quot;&#x6B7B;&quot;&#x5462;&#xFF1F;</p>
+<h3 id="&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x6CD5;"><a name="&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x6CD5;" class="plugin-anchor" href="#&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a><del>&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x6CD5;</del></h3>
+<blockquote>
+<p>&#x7ED9;&#x5BF9;&#x8C61;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x5668;&#xFF0C;&#x6BCF;&#x5F53;&#x6709;&#x4E00;&#x4E2A;&#x5730;&#x65B9;&#x5F15;&#x7528;&#x5B83;&#x65F6;&#xFF0C;&#x8BA1;&#x6570;&#x5668;&#x5C31;+1&#xFF1B;&#x5F53;&#x5F15;&#x7528;&#x5931;&#x6548;&#x65F6;&#xFF0C;&#x8BA1;&#x6570;&#x5668;&#x5C31;-1&#xFF1B;&#x8BA1;&#x6570;&#x5668;&#x4E3A;0&#x7684;&#x5BF9;&#x8C61;&#x5C31;&#x662F;&#x4E0D;&#x80FD;&#x518D;&#x88AB;&#x4F7F;&#x7528;&#x7684;&#xFF0C;&#x5373;&#x5BF9;&#x8C61;&#x5DF2;&#x201D;&#x6B7B;&#x201D;&#x3002;</p>
+</blockquote>
+<p>&#x9700;&#x8981;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#xFF0C;&#x5728;&#x4E3B;&#x6D41;&#x7684;JVM&#x4E2D;&#x6CA1;&#x6709;&#x9009;&#x7528;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x6CD5;&#x6765;&#x7BA1;&#x7406;&#x5185;&#x5B58;&#xFF0C;&#x6700;&#x4E3B;&#x8981;&#x7684;&#x539F;&#x56E0;&#x5C31;&#x662F;&#x5F15;&#x7528;&#x8BA1;&#x6570;&#x6CD5;&#x65E0;&#x6CD5;&#x89E3;&#x51B3;&#x5BF9;&#x8C61;&#x7684;&#x5FAA;&#x73AF;&#x5F15;&#x7528;&#x95EE;&#x9898;&#x3002;</p>
+<h3 id="&#x53EF;&#x8FBE;&#x6027;&#x5206;&#x6790;&#x6CD5;"><a name="&#x53EF;&#x8FBE;&#x6027;&#x5206;&#x6790;&#x6CD5;" class="plugin-anchor" href="#&#x53EF;&#x8FBE;&#x6027;&#x5206;&#x6790;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x53EF;&#x8FBE;&#x6027;&#x5206;&#x6790;&#x6CD5;</h3>
+<p>&#x6B64;&#x7B97;&#x6CD5;&#x7684;&#x6838;&#x5FC3;&#x601D;&#x60F3;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x7CFB;&#x5217;&#x201C;&#x6839;&#x201D;&#x5BF9;&#x8C61;&#x4F5C;&#x4E3A;&#x8D77;&#x59CB;&#x70B9;&#xFF0C;&#x4ECE;&#x6839;&#x51FA;&#x53D1;&#x5F00;&#x59CB;&#x904D;&#x5386;&#xFF0C;&#x53EF;&#x4EE5;&#x88AB;&#x8BBF;&#x95EE;&#x5230;&#x79F0;&#x4E3A;&#x53EF;&#x8FBE;&#x5BF9;&#x8C61;&#xFF0C;&#x5373;&#x6709;&#x7528;&#x7684;&#xFF0C;&#x53CD;&#x4E4B;&#xFF0C;&#x5219;&#x662F;&#x8981;&#x56DE;&#x6536;&#x7684;&#x3002;</p>
+<p>&#x6839;&#x5BF9;&#x8C61;&#x662F;&#x8BA4;&#x4E3A;&#x4E00;&#x5B9A;&#x6709;&#x7528;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x6709;&#x4EE5;&#x4E0B;4&#x7C7B;:</p>
+<ul>
+<li>&#x6D3B;&#x52A8;&#x6808;&#x5E27;&#x4E2D;&#x7684;&#x5C40;&#x90E8;&#x53D8;&#x91CF;</li>
+<li>&#x65B9;&#x6CD5;&#x533A;&#x4E2D;&#x7C7B;&#x9759;&#x6001;&#x5C5E;&#x6027;&#x5F15;&#x7528;&#x7684;&#x53D8;&#x91CF;</li>
+<li>&#x65B9;&#x6CD5;&#x533A;&#x4E2D;&#x5E38;&#x91CF;&#x5F15;&#x7528;&#x7684;&#x53D8;&#x91CF;</li>
+<li>JNI&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;</li>
+</ul>
+<h2 id="&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x56DE;&#x6536;"><a name="&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x56DE;&#x6536;" class="plugin-anchor" href="#&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x56DE;&#x6536;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x56DE;&#x6536;</h2>
+<p>&#x5F53;&#x65B0;&#x5EFA;&#x5BF9;&#x8C61;&#x5185;&#x5B58;&#x5206;&#x914D;&#x5931;&#x8D25;&#x7684;&#x65F6;&#x5019;</p>
+<h2 id="&#x56DE;&#x6536;&#x7B97;&#x6CD5;"><a name="&#x56DE;&#x6536;&#x7B97;&#x6CD5;" class="plugin-anchor" href="#&#x56DE;&#x6536;&#x7B97;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DE;&#x6536;&#x7B97;&#x6CD5;</h2>
+<h3 id="&#x6807;&#x8BB0;&#x6E05;&#x9664;&#x7B97;&#x6CD5;mark-and-sweep"><a name="&#x6807;&#x8BB0;&#x6E05;&#x9664;&#x7B97;&#x6CD5;mark-and-sweep" class="plugin-anchor" href="#&#x6807;&#x8BB0;&#x6E05;&#x9664;&#x7B97;&#x6CD5;mark-and-sweep"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6807;&#x8BB0;&#x6E05;&#x9664;&#x7B97;&#x6CD5;(mark and sweep)</h3>
+<h4 id="&#x539F;&#x7406;"><a name="&#x539F;&#x7406;" class="plugin-anchor" href="#&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x7406;</h4>
+<p>&#x987E;&#x540D;&#x601D;&#x4E49;&#xFF0C;&#x7B97;&#x6CD5;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x9636;&#x6BB5;&#xFF0C;&#x6807;&#x8BB0;&#x548C;&#x6E05;&#x9664;&#x3002;
+&#x5728;&#x6807;&#x8BB0;&#x9636;&#x6BB5;&#xFF0C;&#x6536;&#x96C6;&#x5668;&#x4ECE;&#x201C;&#x6839;&#x201D;&#x5BF9;&#x8C61;&#x51FA;&#x53D1;&#xFF0C;&#x628A;&#x80FD;&#x8BBF;&#x95EE;&#x5230;&#x7684;&#x90FD;&#x6253;&#x4E0A;&#x6807;&#x8BC6;&#x3002;
+&#x800C;&#x5728;&#x6E05;&#x9664;&#x9636;&#x6BB5;&#xFF0C;&#x6536;&#x96C6;&#x5668;&#x5BF9;&#x5806;&#x5185;&#x5B58;&#x4ECE;&#x5934;&#x5230;&#x5C3E;&#x8FDB;&#x884C;&#x7EBF;&#x6027;&#x904D;&#x5386;&#xFF0C;&#x53D1;&#x73B0;&#x67D0;&#x4E2A;&#x5BF9;&#x8C61;&#x6CA1;&#x6709;&#x6807;&#x8BB0;&#xFF0C;&#x5219;&#x5C06;&#x5176;&#x56DE;&#x6536;&#x3002;
+&#x6807;&#x8BB0;&#x548C;&#x6E05;&#x9664;&#x9636;&#x6BB5;&#xFF0C;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x90FD;&#x5C06;&#x6682;&#x505C;&#xFF0C;Stop the world.</p>
+<h4 id="&#x7F3A;&#x70B9;"><a name="&#x7F3A;&#x70B9;" class="plugin-anchor" href="#&#x7F3A;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F3A;&#x70B9;</h4>
+<p>&#x6807;&#x8BB0;&#x6E05;&#x9664;&#x540E;&#x5B58;&#x5728;&#x5927;&#x91CF;&#x788E;&#x7247;</p>
+<h3 id="&#x6807;&#x8BB0;&#x538B;&#x7F29;&#x7B97;&#x6CD5;mark-and-compact"><a name="&#x6807;&#x8BB0;&#x538B;&#x7F29;&#x7B97;&#x6CD5;mark-and-compact" class="plugin-anchor" href="#&#x6807;&#x8BB0;&#x538B;&#x7F29;&#x7B97;&#x6CD5;mark-and-compact"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6807;&#x8BB0;&#x538B;&#x7F29;&#x7B97;&#x6CD5;(mark and compact)</h3>
+<h4 id="&#x539F;&#x7406;"><a name="&#x539F;&#x7406;" class="plugin-anchor" href="#&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x7406;</h4>
+<p>&#x540C;&#x6837;&#xFF0C;&#x7B97;&#x6CD5;&#x4E5F;&#x662F;&#x4E24;&#x4E2A;&#x9636;&#x6BB5;&#x3002;
+&#x6807;&#x8BB0;&#x9636;&#x6BB5;&#x548C;&#x6807;&#x8BB0;&#x6E05;&#x9664;&#x7B97;&#x6CD5;&#x4E00;&#x6837;&#x3002;
+&#x533A;&#x522B;&#x5728;&#x4E8E;&#x538B;&#x7F29;&#x9636;&#x6BB5;&#xFF0C;&#x5B83;&#x7684;&#x76EE;&#x7684;&#x662F;&#x628A;&#x53EF;&#x8FBE;&#x5BF9;&#x8C61;&#x79FB;&#x52A8;&#x5230;&#x5806;&#x5185;&#x5B58;&#x7684;&#x540C;&#x4E00;&#x5757;&#x533A;&#x57DF;&#x4E2D;&#xFF0C;&#x4F7F;&#x5176;&#x7D27;&#x51D1;&#x6392;&#x5217;&#xFF0C;&#x4EE5;&#x51CF;&#x5C11;&#x5185;&#x5B58;&#x788E;&#x7247;&#x3002;</p>
+<h4 id="&#x7F3A;&#x70B9;"><a name="&#x7F3A;&#x70B9;" class="plugin-anchor" href="#&#x7F3A;&#x70B9;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7F3A;&#x70B9;</h4>
+<p>&#x9700;&#x904D;&#x5386;&#x591A;&#x6B21;&#x4EE5;&#x8FC1;&#x79FB;&#x5BF9;&#x8C61;&#xFF0C;&#x9700;&#x8981;&#x989D;&#x5916;&#x7684;&#x5F00;&#x9500;&#xFF0C;&#x5B9E;&#x73B0;&#x590D;&#x6742;</p>
+<h3 id="&#x534A;&#x533A;&#x590D;&#x5236;&#x7B97;&#x6CD5;copying"><a name="&#x534A;&#x533A;&#x590D;&#x5236;&#x7B97;&#x6CD5;copying" class="plugin-anchor" href="#&#x534A;&#x533A;&#x590D;&#x5236;&#x7B97;&#x6CD5;copying"><i class="fa fa-link" aria-hidden="true"></i></a>&#x534A;&#x533A;&#x590D;&#x5236;&#x7B97;&#x6CD5;(copying)</h3>
+<h4 id="&#x539F;&#x7406;"><a name="&#x539F;&#x7406;" class="plugin-anchor" href="#&#x539F;&#x7406;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x539F;&#x7406;</h4>
+<p>&#x4E4B;&#x6240;&#x4EE5;&#x53EB;&#x534A;&#x533A;&#x590D;&#x5236;&#xFF0C;&#x662F;&#x56E0;&#x4E3A;&#x5B83;&#x5C06;&#x5806;&#x5185;&#x5B58;&#x5206;&#x4E3A;&#x4E24;&#x4E2A;&#x534A;&#x533A;&#xFF0C;&#x53EA;&#x7528;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x534A;&#x533A;&#x6765;&#x8FDB;&#x884C;&#x5BF9;&#x8C61;&#x5185;&#x5B58;&#x5206;&#x914D;&#x3002;
+&#x5F53;&#x8FD9;&#x4E2A;&#x534A;&#x533A;&#x5185;&#x5B58;&#x4E0D;&#x591F;&#x65F6;&#xFF0C;&#x5219;&#x5F00;&#x59CB;&#x5783;&#x573E;&#x6536;&#x96C6;&#xFF0C;&#x5C06;&#x53EF;&#x8FBE;&#x5BF9;&#x8C61;&#x590D;&#x5236;&#x5230;&#x53E6;&#x4E00;&#x4E2A;&#x534A;&#x533A;&#x3002;</p>
+<h4 id="&#x6548;&#x679C;"><a name="&#x6548;&#x679C;" class="plugin-anchor" href="#&#x6548;&#x679C;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6548;&#x679C;</h4>
+<p>&#x8BE5;&#x7B97;&#x6CD5;&#x76EE;&#x7684;&#x4E5F;&#x662F;&#x4E3A;&#x4E86;&#x89E3;&#x51B3;&#x5185;&#x5B58;&#x788E;&#x7247;&#x95EE;&#x9898;&#xFF0C;&#x5BF9;&#x6BD4;&#x6807;&#x8BB0;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#xFF0C;&#x5B83;&#x4E0D;&#x9700;&#x8981;&#x904D;&#x5386;&#x591A;&#x6B21;&#xFF0C;&#x8282;&#x7EA6;&#x65F6;&#x95F4;&#x3002;
+&#x4F46;&#x6709;&#x4E00;&#x4E2A;&#x4E3B;&#x8981;&#x7F3A;&#x70B9;&#x5C31;&#x662F;&#x53EF;&#x7528;&#x5806;&#x5185;&#x5B58;&#x51CF;&#x5C0F;&#x4E00;&#x534A;&#xFF0C;&#x5BF9;&#x4E8E;&#x5927;&#x5BF9;&#x8C61;&#xFF0C;&#x590D;&#x5236;&#x6BD4;&#x6807;&#x8BB0;&#x4EE3;&#x4EF7;&#x66F4;&#x9AD8;&#x3002;</p>
+<h3 id="&#x5206;&#x4EE3;&#x56DE;&#x6536;&#x7B97;&#x6CD5;"><a name="&#x5206;&#x4EE3;&#x56DE;&#x6536;&#x7B97;&#x6CD5;" class="plugin-anchor" href="#&#x5206;&#x4EE3;&#x56DE;&#x6536;&#x7B97;&#x6CD5;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5206;&#x4EE3;&#x56DE;&#x6536;&#x7B97;&#x6CD5;</h3>
+<p>&#x9996;&#x5148;&#x4E00;&#x4E2A;&#x57FA;&#x7840;&#x5047;&#x8BBE;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x5BF9;&#x8C61;&#x53EA;&#x5B58;&#x5728;&#x5F88;&#x77ED;&#x65F6;&#x95F4;&#x3002;</p>
+<p>&#x7136;&#x540E;&#x5C06;&#x5185;&#x5B58;&#x5206;&#x4E3A;&#x65B0;&#x751F;&#x4EE3;&#x548C;&#x8001;&#x751F;&#x4EE3;&#xFF0C;&#x65B0;&#x751F;&#x4EE3;&#x662F;&#x7ECF;&#x5E38;&#x9700;&#x8981;&#x5783;&#x573E;&#x56DE;&#x6536;&#x7684;(Minor GC)&#xFF0C;
+&#x5C06;&#x65B0;&#x751F;&#x4EE3;&#x518D;&#x8FDB;&#x4E00;&#x6B65;&#x5212;&#x5206;&#xFF0C;&#x5206;&#x4E3A;Eden&#x3001;Survior1&#x3001;Survior2&#xFF0C;&#x5728;&#x65B0;&#x751F;&#x4EE3;&#x7528;&#x534A;&#x533A;&#x590D;&#x5236;&#x7B97;&#x6CD5;&#xFF0C;
+&#x6BCF;&#x6B21;&#x5C06;eden&#x548C;&#x4E00;&#x4E2A;survior&#x7684;&#x5BF9;&#x8C61;&#x56DE;&#x6536;&#x540E;&#x62F7;&#x8D1D;&#x5230;&#x53E6;&#x4E00;&#x4E2A;survior&#x4E2D;&#xFF0C;&#x5E76;&#x6807;&#x8BB0;&#x5B58;&#x6D3B;&#x6B21;&#x6570;&#xFF0C;&#x56E0;&#x4E3A;&#x6709;&#x524D;&#x9762;&#x7684;&#x57FA;&#x7840;&#x5047;&#x8BBE;&#xFF0C;&#x62F7;&#x8D1D;&#x7684;&#x5BF9;&#x8C61;&#x4E00;&#x822C;&#x4E0D;&#x4F1A;&#x592A;&#x591A;&#x3002;</p>
+<p>&#x5F53;&#x5B58;&#x6D3B;&#x6B21;&#x6570;&#x5230;&#x4E00;&#x5B9A;&#x6B21;&#x6570;&#x540E;&#xFF08;&#x6BD4;&#x5982;15&#x6B21;&#xFF09;&#xFF0C;&#x5C06;&#x5BF9;&#x8C61;&#x653E;&#x5165;&#x8001;&#x751F;&#x4EE3;&#x4E2D;&#xFF0C;&#x8001;&#x751F;&#x4EE3;&#x53D1;&#x751F;GC&#x7684;&#x6982;&#x7387;&#x66F4;&#x5C0F;&#xFF0C;&#x5728;&#x8001;&#x751F;&#x4EE3;&#x5C31;&#x91C7;&#x7528;&#x6807;&#x8BB0;&#x538B;&#x7F29;&#x7B97;&#x6CD5;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x65B0;&#x751F;&#x4EE3;&#x548C;&#x8001;&#x751F;&#x4EE3;&#x5916;&#xFF0C;&#x8FD8;&#x6709;&#x4E2A;&#x6301;&#x4E45;&#x4EE3;(Permanent Generation)&#xFF0C;java8&#x4EE5;&#x540E;&#x4E3A;MetaSpace&#xFF0C;&#x529F;&#x80FD;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code>&gt; Permanent Generation
+1. &#x653E;&#x7F6E;ClassLoader&#x8BFB;&#x8FDB;&#x6765;&#x7684;class&#xFF0C;&#x9664;&#x7CFB;&#x7EDF;class&#x5916;
+2. &#x653E;&#x7F6E;String.intern&#x540E;&#x7684;&#x7ED3;&#x679C;
+3. &#x53EF;&#x80FD;&#x51FA;&#x73B0;OutOfMemoryError:PermGen Space
+
+&gt; Meta Space
+1. java8 &#x4E4B;&#x540E;&#x4F7F;&#x7528;Meta space,&#x53D6;&#x6D88;Permanent space
+2. String.intern&#x7684;&#x7ED3;&#x679C;&#x653E;&#x5165;&#x5806;
+3. meta space&#x9ED8;&#x8BA4;&#x4E0D;&#x9650;&#x5236;&#xFF0C;&#x4F7F;&#x7528;&#x7CFB;&#x7EDF;&#x5185;&#x5B58;
+</code></pre><p>&#x7EFC;&#x4E0A;&#xFF0C;&#x5206;&#x5E26;&#x56DE;&#x6536;&#x5206;&#x7C7B;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code>- &#x65B0;&#x751F;&#x4EE3;(1)
+  - Eden(8)
+  - Survior0(1)
+  - Survior1(1)
+- &#x8001;&#x751F;&#x4EE3;(2)
+- &#x6301;&#x4E45;&#x4EE3;/Meta space
+</code></pre><p>&#x8BF4;&#x4E86;&#x8FD9;&#x4E48;&#x591A;&#xFF0C;&#x6BCF;&#x4E00;&#x5757;&#x5185;&#x5B58;&#x5230;&#x5E95;&#x591A;&#x5927;&#x3002;&#x4E0D;&#x8981;&#x614C;&#xFF0C;&#x8FD9;&#x4E9B;&#x90FD;&#x662F;&#x53C2;&#x6570;&#xFF0C;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x7684;&#x3002;</p>
+<pre><code>-XX:NewRatio=2&#xFF0C;&#x8001;&#x751F;&#x4EE3;/&#x65B0;&#x751F;&#x4EE3;&#x6BD4;&#x4F8B;&#xFF0C;&#x9ED8;&#x8BA4;2
+-XX:SurvivorRatio=8&#xFF0C;Eden/Survivor&#x6BD4;&#x4F8B;&#xFF0C;&#x9ED8;&#x8BA4;8&#xFF0C;survior&#x6709;&#x4E24;&#x5757;&#xFF0C;&#x6240;&#x4EE5;&#xFF18;:1:1
+-XX:MaxTenuringThreshold=15&#xFF0C;&#x65B0;&#x751F;&#x4EE3;&#x8F6C;&#x81F3;&#x8001;&#x751F;&#x4EE3;&#x7684;&#x9608;&#x503C;&#xFF0C;&#x9ED8;&#x8BA4;15
+-Xms2048m   &#x6700;&#x5C0F;&#x5806;
+-Xmx2048m   &#x6700;&#x5927;&#x5806;
+-Xmn1024m   &#x65B0;&#x751F;&#x4EE3;
+-Xss1M
+</code></pre><h2 id="&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;"><a name="&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;" class="plugin-anchor" href="#&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5783;&#x573E;&#x6536;&#x96C6;&#x5668;</h2>
+<p>&#x865A;&#x62DF;&#x673A;&#x6240;&#x5305;&#x542B;&#x7684;&#x6240;&#x6709;&#x6536;&#x96C6;&#x5668;&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A;
+<img src="../../images/java/gc-collector.png" alt="gc-collector"></p>
+<h3 id="serial"><a name="serial" class="plugin-anchor" href="#serial"><i class="fa fa-link" aria-hidden="true"></i></a>Serial</h3>
+<h3 id="parnew"><a name="parnew" class="plugin-anchor" href="#parnew"><i class="fa fa-link" aria-hidden="true"></i></a>ParNew</h3>
+<h3 id="parallel-scavenge"><a name="parallel-scavenge" class="plugin-anchor" href="#parallel-scavenge"><i class="fa fa-link" aria-hidden="true"></i></a>Parallel Scavenge</h3>
+<h3 id="serial-old"><a name="serial-old" class="plugin-anchor" href="#serial-old"><i class="fa fa-link" aria-hidden="true"></i></a>Serial Old</h3>
+<h3 id="parallel-old"><a name="parallel-old" class="plugin-anchor" href="#parallel-old"><i class="fa fa-link" aria-hidden="true"></i></a>Parallel Old</h3>
+<h3 id="cms"><a name="cms" class="plugin-anchor" href="#cms"><i class="fa fa-link" aria-hidden="true"></i></a>CMS</h3>
+<h3 id="g1"><a name="g1" class="plugin-anchor" href="#g1"><i class="fa fa-link" aria-hidden="true"></i></a>G1</h3>
+<h2 id="&#x5185;&#x5B58;&#x5206;&#x914D;&#x7B56;&#x7565;"><a name="&#x5185;&#x5B58;&#x5206;&#x914D;&#x7B56;&#x7565;" class="plugin-anchor" href="#&#x5185;&#x5B58;&#x5206;&#x914D;&#x7B56;&#x7565;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5185;&#x5B58;&#x5206;&#x914D;&#x7B56;&#x7565;</h2>
+<h3 id="&#x4F18;&#x5148;&#x5728;eden&#x4E0A;&#x5206;&#x914D;"><a name="&#x4F18;&#x5148;&#x5728;eden&#x4E0A;&#x5206;&#x914D;" class="plugin-anchor" href="#&#x4F18;&#x5148;&#x5728;eden&#x4E0A;&#x5206;&#x914D;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x4F18;&#x5148;&#x5728;eden&#x4E0A;&#x5206;&#x914D;</h3>
+<h3 id="&#x5927;&#x5BF9;&#x8C61;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;"><a name="&#x5927;&#x5BF9;&#x8C61;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;" class="plugin-anchor" href="#&#x5927;&#x5BF9;&#x8C61;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5927;&#x5BF9;&#x8C61;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;</h3>
+<h3 id="&#x957F;&#x671F;&#x5B58;&#x6D3B;&#x7684;&#x5BF9;&#x8C61;&#x5C06;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;"><a name="&#x957F;&#x671F;&#x5B58;&#x6D3B;&#x7684;&#x5BF9;&#x8C61;&#x5C06;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;" class="plugin-anchor" href="#&#x957F;&#x671F;&#x5B58;&#x6D3B;&#x7684;&#x5BF9;&#x8C61;&#x5C06;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x957F;&#x671F;&#x5B58;&#x6D3B;&#x7684;&#x5BF9;&#x8C61;&#x5C06;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;</h3>
+<p>&#x6BCF;&#x5B58;&#x6D3B;&#x4E00;&#x6B21;MinorGC&#xFF0C;&#x5BF9;&#x8C61;&#x5E74;&#x9F84;&#x589E;&#x52A0;1&#xFF0C;&#x5F53;&#x5230;&#x8FBE;&#x4E00;&#x5B9A;&#x5E74;&#x9F84;(&#x9ED8;&#x8BA4;15)&#xFF0C;&#x5C06;&#x8F6C;&#x79FB;&#x5230;&#x8001;&#x5E74;&#x4EE3;&#xFF0C;&#x4E0D;&#x5728;survivor&#x95F4;&#x62F7;&#x6765;&#x62F7;&#x53BB;&#x3002;</p>
+<h3 id="&#x5BF9;&#x8C61;&#x52A8;&#x6001;&#x5E74;&#x9F84;&#x5224;&#x65AD;"><a name="&#x5BF9;&#x8C61;&#x52A8;&#x6001;&#x5E74;&#x9F84;&#x5224;&#x65AD;" class="plugin-anchor" href="#&#x5BF9;&#x8C61;&#x52A8;&#x6001;&#x5E74;&#x9F84;&#x5224;&#x65AD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BF9;&#x8C61;&#x52A8;&#x6001;&#x5E74;&#x9F84;&#x5224;&#x65AD;</h3>
+<p>&#x5982;&#x679C;Survivor&#x7A7A;&#x95F4;&#x4E2D;&#x7684;&#x76F8;&#x540C;&#x5E74;&#x9F84;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x5927;&#x5C0F;&#x7684;&#x603B;&#x548C;&#x5927;&#x4E8E;Survivor&#x7A7A;&#x95F4;&#x7684;&#x4E00;&#x534A;&#xFF0C;&#x5E74;&#x9F84;&#x5927;&#x4E8E;&#x6216;&#x7B49;&#x4E8E;&#x8BE5;&#x5E74;&#x9F84;&#x7684;&#x5BF9;&#x8C61;&#x5C31;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8FDB;&#x5165;&#x8001;&#x5E74;&#x4EE3;&#xFF0C;&#x65E0;&#x9700;&#x7B49;&#x5230;MaxTenuringThreshold&#x4E2D;&#x8981;&#x6C42;&#x7684;&#x5E74;&#x9F84;</p>
+<h3 id="&#x7A7A;&#x95F4;&#x5206;&#x914D;&#x62C5;&#x4FDD;"><a name="&#x7A7A;&#x95F4;&#x5206;&#x914D;&#x62C5;&#x4FDD;" class="plugin-anchor" href="#&#x7A7A;&#x95F4;&#x5206;&#x914D;&#x62C5;&#x4FDD;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x7A7A;&#x95F4;&#x5206;&#x914D;&#x62C5;&#x4FDD;</h3>
+<p>&#x5728;&#x53D1;&#x751F;MinorGC&#x4E4B;&#x524D;&#xFF0C;&#x865A;&#x62DF;&#x673A;&#x4F1A;&#x5148;&#x68C0;&#x67E5;&#x8001;&#x5E74;&#x4EE3;&#x6700;&#x5927;&#x53EF;&#x7528;&#x8FDE;&#x7EED;&#x7A7A;&#x95F4;&#x662F;&#x5426;&#x5927;&#x4E8E;&#x65B0;&#x751F;&#x4EE3;&#x6240;&#x6709;&#x5BF9;&#x8C61;&#x603B;&#x7A7A;&#x95F4;&#xFF0C;&#x5982;&#x679C;&#x6761;&#x4EF6;&#x6210;&#x7ACB;&#xFF0C;&#x90A3;&#x4E48;MinorGC&#x53EF;&#x4EE5;&#x786E;&#x4FDD;&#x662F;&#x5B89;&#x5168;&#x7684;&#x3002;</p>
+<h2 id="&#x5DE5;&#x5177;"><a name="&#x5DE5;&#x5177;" class="plugin-anchor" href="#&#x5DE5;&#x5177;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5DE5;&#x5177;</h2>
+<h3 id="jpsjvm-process-status"><a name="jpsjvm-process-status" class="plugin-anchor" href="#jpsjvm-process-status"><i class="fa fa-link" aria-hidden="true"></i></a>jps(JVM Process Status)</h3>
+<p>&#x865A;&#x62DF;&#x673A;&#x8FDB;&#x7A0B;&#x72B6;&#x51B5;&#x5DE5;&#x5177;,&#x663E;&#x793A;&#x6307;&#x5B9A;&#x7CFB;&#x7EDF;&#x5185;&#x6240;&#x6709;&#x7684;HotSpot&#x865A;&#x62DF;&#x673A;&#x8FDB;&#x7A0B;</p>
+<table>
+<thead>
+<tr>
+<th>&#x9009;&#x9879;</th>
+<th>&#x4F5C;&#x7528;   </th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-q</td>
+<td>&#x53EA;&#x8F93;&#x51FA;LVMID&#xFF0C;&#x7701;&#x7565;&#x4E3B;&#x7C7B;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>&#x8F93;&#x51FA;&#x865A;&#x62DF;&#x673A;&#x542F;&#x52A8;&#x65F6;&#x4F20;&#x7ED9;main()&#x51FD;&#x6570;&#x7684;&#x53C2;&#x6570;</td>
+</tr>
+<tr>
+<td>-l</td>
+<td>&#x8F93;&#x51FA;&#x4E3B;&#x7C7B;&#x7684;&#x5168;&#x540D;&#xFF0C;&#x5982;&#x679C;&#x662F;jar&#x5305;&#xFF0C;&#x5219;jar&#x5305;&#x8DEF;&#x5F84;</td>
+</tr>
+<tr>
+<td>-v</td>
+<td>&#x8F93;&#x51FA;&#x865A;&#x62DF;&#x673A;&#x8FDB;&#x7A0B;&#x542F;&#x52A8;&#x65F6;JVM&#x53C2;&#x6570;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="jstatjvm-statistics-monitoring-tool"><a name="jstatjvm-statistics-monitoring-tool" class="plugin-anchor" href="#jstatjvm-statistics-monitoring-tool"><i class="fa fa-link" aria-hidden="true"></i></a>jstat(JVM statistics Monitoring Tool)</h3>
+<p>&#x7528;&#x4E8E;&#x6536;&#x96C6;HotSpot&#x865A;&#x62DF;&#x673A;&#x5404;&#x65B9;&#x9762;&#x7684;&#x8FD0;&#x884C;&#x6570;&#x636E;</p>
+<h3 id="jinfo"><a name="jinfo" class="plugin-anchor" href="#jinfo"><i class="fa fa-link" aria-hidden="true"></i></a>jinfo</h3>
+<p>&#x663E;&#x793A;&#x865A;&#x62DF;&#x673A;&#x914D;&#x7F6E;&#x4FE1;&#x606F;</p>
+<h3 id="jmap"><a name="jmap" class="plugin-anchor" href="#jmap"><i class="fa fa-link" aria-hidden="true"></i></a>jmap</h3>
+<p>&#x751F;&#x6210;&#x865A;&#x62DF;&#x673A;&#x7684;&#x5185;&#x5B58;&#x8F6C;&#x50A8;&#x5FEB;&#x7167;(heapdump&#x6587;&#x4EF6;)</p>
+<h3 id="jhatjvm-heap-dump-browser"><a name="jhatjvm-heap-dump-browser" class="plugin-anchor" href="#jhatjvm-heap-dump-browser"><i class="fa fa-link" aria-hidden="true"></i></a>jhat(JVM Heap Dump Browser)</h3>
+<p>&#x7528;&#x4E8E;&#x5206;&#x6790;heapdump&#x6587;&#x4EF6;&#xFF0C;&#x5B83;&#x4F1A;&#x5EFA;&#x7ACB;&#x4E00;&#x4E2A;http&#x670D;&#x52A1;&#x5668;&#xFF0C;&#x8BA9;&#x7528;&#x6237;&#x53EF;&#x4EE5;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x4E0A;&#x67E5;&#x770B;&#x5206;&#x6790;&#x7ED3;&#x679C;</p>
+<h3 id="jstack"><a name="jstack" class="plugin-anchor" href="#jstack"><i class="fa fa-link" aria-hidden="true"></i></a>jstack</h3>
+<p>&#x663E;&#x793A;&#x865A;&#x62DF;&#x673A;&#x7EBF;&#x7A0B;&#x5FEB;&#x7167;</p>
+<h3 id="jconsole"><a name="jconsole" class="plugin-anchor" href="#jconsole"><i class="fa fa-link" aria-hidden="true"></i></a>jconsole</h3>
+<h3 id="jvisualvm"><a name="jvisualvm" class="plugin-anchor" href="#jvisualvm"><i class="fa fa-link" aria-hidden="true"></i></a>jvisualvm</h3>
+<h3 id="&#x5176;&#x5B83;"><a name="&#x5176;&#x5B83;" class="plugin-anchor" href="#&#x5176;&#x5B83;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5176;&#x5B83;</h3>
+<pre><code>&#x7B2C;&#x4E09;&#x65B9;&#xFF1A;Eclipse Memory Analyzer(MAT)
+&#x5728;&#x7EBF;&#x670D;&#x52A1;&#xFF1A;gceasy.io,fastthread.io
+</code></pre><h2 id="&#x5176;&#x5B83;"><a name="&#x5176;&#x5B83;" class="plugin-anchor" href="#&#x5176;&#x5B83;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5176;&#x5B83;</h2>
+<h3 id="&#x5F15;&#x7528;"><a name="&#x5F15;&#x7528;" class="plugin-anchor" href="#&#x5F15;&#x7528;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5F15;&#x7528;</h3>
+<ul>
+<li><p>&#x5F3A;&#x5F15;&#x7528;</p>
+<p>  &#x7C7B;&#x4F3C;Object obj = new Object()&#x5F15;&#x7528;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x53EA;&#x8981;&#x8FD8;&#x5B58;&#x5728;&#x5F3A;&#x5F15;&#x7528;&#xFF0C;&#x5783;&#x573E;&#x56DE;&#x6536;&#x5668;&#x6C38;&#x8FDC;&#x4E0D;&#x4F1A;&#x56DE;&#x6536;&#x3002;</p>
+</li>
+<li><p>&#x8F6F;&#x5F15;&#x7528;</p>
+<p>  &#x63CF;&#x8FF0;&#x6709;&#x7528;&#x3001;&#x4F46;&#x975E;&#x5FC5;&#x987B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5728;&#x5C06;&#x8981;&#x53D1;&#x751F;&#x5185;&#x5B58;&#x6EA2;&#x51FA;&#x4E4B;&#x524D;&#x56DE;&#x6536;&#xFF0C;&#x5982;&#x679C;&#x8FD8;&#x4E0D;&#x591F;&#xFF0C;&#x624D;&#x8DD1;&#x51FA;&#x5185;&#x5B58;&#x6EA2;&#x51FA;&#x5F02;&#x5E38;</p>
+</li>
+<li><p>&#x5F31;&#x5F15;&#x7528;</p>
+<p>  &#x540C;&#x8F6F;&#x5F15;&#x7528;&#xFF0C;&#x63CF;&#x8FF0;&#x6709;&#x7528;&#x3001;&#x4F46;&#x975E;&#x5FC5;&#x987B;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x5728;&#x4E0B;&#x4E00;&#x6B21;gc&#x5C31;&#x4F1A;&#x56DE;&#x6536;</p>
+</li>
+<li><p>&#x865A;&#x5F15;&#x7528;</p>
+<p>  todo,&#x6CA1;&#x7406;&#x89E3;&#x900F;</p>
+</li>
+</ul>
+<p>cpu &#x539F;&#x5B50;&#x64CD;&#x4F5C;
+read,write,load,store,assign,use,lock,unlock </p>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; axboy.cn 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-08-11 10:03:20
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="io.html" class="navigation navigation-prev " aria-label="Previous page: io">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="level.html" class="navigation navigation-next " aria-label="Next page: level">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"jvm","level":"1.2.5.6","depth":3,"next":{"title":"level","level":"1.2.5.7","depth":3,"path":"archived/java/level.md","ref":"./archived/java/level.md","articles":[]},"previous":{"title":"io","level":"1.2.5.5","depth":3,"path":"archived/java/io.md","ref":"./archived/java/io.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors@^0.7.1","expandable-chapters","chapter-fold","3-ba@^0.9.0","terminal@^0.3.2","code","codeblock-filename","tbfed-pagefooter@^0.0.1"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy axboy.cn 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"codeblock-filename":{},"3-ba":{"configuration":"auto","token":"affdcc846dc488b83e30ede10e1d1abe"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","author":"axboy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"笔记","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"archived/java/jvm.md","mtime":"2021-08-11T02:03:20.510Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-14T08:00:02.199Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

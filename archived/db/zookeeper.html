@@ -1,0 +1,900 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>zookeeper · 笔记</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="axboy">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-anchors/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-terminal/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-codeblock-filename/block.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="redis.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Introduction
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" >
+            
+                <span>
+            
+                    
+                    archived
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" >
+            
+                <span>
+            
+                    
+                    db
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="elastic-search.html">
+            
+                <a href="elastic-search.html">
+            
+                    
+                    elastic-search
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="elk.html">
+            
+                <a href="elk.html">
+            
+                    
+                    elk
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="etcd.html">
+            
+                <a href="etcd.html">
+            
+                    
+                    etcd
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="influxdb.html">
+            
+                <a href="influxdb.html">
+            
+                    
+                    influxdb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="mongodb.html">
+            
+                <a href="mongodb.html">
+            
+                    
+                    mongodb
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="mysql.html">
+            
+                <a href="mysql.html">
+            
+                    
+                    mysql
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="Percona-Restore.html">
+            
+                <a href="Percona-Restore.html">
+            
+                    
+                    Percona-Restore
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="redis.html">
+            
+                <a href="redis.html">
+            
+                    
+                    redis
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.1.9" data-path="zookeeper.html">
+            
+                <a href="zookeeper.html">
+            
+                    
+                    zookeeper
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" >
+            
+                <span>
+            
+                    
+                    golang
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../golang/安装环境.html">
+            
+                <a href="../golang/安装环境.html">
+            
+                    
+                    安装环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" >
+            
+                <span>
+            
+                    
+                    hr
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.3.1" data-path="../hr/interview.html">
+            
+                <a href="../hr/interview.html">
+            
+                    
+                    interview
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3.2" data-path="../hr/java.html">
+            
+                <a href="../hr/java.html">
+            
+                    
+                    java
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.4" >
+            
+                <span>
+            
+                    
+                    ide
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.4.1" data-path="../ide/intellij-idea.html">
+            
+                <a href="../ide/intellij-idea.html">
+            
+                    
+                    intellij-idea
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5" >
+            
+                <span>
+            
+                    
+                    java
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.5.1" data-path="../java/concurrency.html">
+            
+                <a href="../java/concurrency.html">
+            
+                    
+                    concurrency
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.2" data-path="../java/design-pattern.html">
+            
+                <a href="../java/design-pattern.html">
+            
+                    
+                    design-pattern
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.3" data-path="../java/feign.html">
+            
+                <a href="../java/feign.html">
+            
+                    
+                    feign
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.4" data-path="../java/hello-dubbo.html">
+            
+                <a href="../java/hello-dubbo.html">
+            
+                    
+                    hello-dubbo
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.5" data-path="../java/io.html">
+            
+                <a href="../java/io.html">
+            
+                    
+                    io
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.6" data-path="../java/jvm.html">
+            
+                <a href="../java/jvm.html">
+            
+                    
+                    jvm
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.7" data-path="../java/level.html">
+            
+                <a href="../java/level.html">
+            
+                    
+                    level
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.8" data-path="../java/mycat.html">
+            
+                <a href="../java/mycat.html">
+            
+                    
+                    mycat
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.9" data-path="../java/netty.html">
+            
+                <a href="../java/netty.html">
+            
+                    
+                    netty
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.10" data-path="../java/oauth2.html">
+            
+                <a href="../java/oauth2.html">
+            
+                    
+                    oauth2
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.11" data-path="../java/String.html">
+            
+                <a href="../java/String.html">
+            
+                    
+                    String
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.5.12" data-path="../java/thread.html">
+            
+                <a href="../java/thread.html">
+            
+                    
+                    thread
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6" >
+            
+                <span>
+            
+                    
+                    os
+            
+                </span>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.6.1" data-path="../os/docker.html">
+            
+                <a href="../os/docker.html">
+            
+                    
+                    docker
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.2" data-path="../os/frp-rdp.html">
+            
+                <a href="../os/frp-rdp.html">
+            
+                    
+                    frp-rdp
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.3" data-path="../os/linux.html">
+            
+                <a href="../os/linux.html">
+            
+                    
+                    linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.4" data-path="../os/net.html">
+            
+                <a href="../os/net.html">
+            
+                    
+                    net
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.5" data-path="../os/osx.html">
+            
+                <a href="../os/osx.html">
+            
+                    
+                    osx
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.6" data-path="../os/raspberry-pi.html">
+            
+                <a href="../os/raspberry-pi.html">
+            
+                    
+                    raspberry-pi
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.7" data-path="../os/ubuntu.html">
+            
+                <a href="../os/ubuntu.html">
+            
+                    
+                    ubuntu
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.6.8" data-path="../os/win10.html">
+            
+                <a href="../os/win10.html">
+            
+                    
+                    win10
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >zookeeper</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h2 id="zoocfg&#x914D;&#x7F6E;"><a name="zoocfg&#x914D;&#x7F6E;" class="plugin-anchor" href="#zoocfg&#x914D;&#x7F6E;"><i class="fa fa-link" aria-hidden="true"></i></a>zoo.cfg&#x914D;&#x7F6E;</h2>
+<pre><code>tickTime    &#x7528;&#x4E8E;&#x8BA1;&#x7B97;&#x5355;&#x7684;&#x65F6;&#x95F4;&#x5355;&#x5143;&#xFF0C;&#x5355;&#x4F4D;&#x662F;&#x6BEB;&#x79D2;
+initLimit   &#x7528;&#x4E8E;&#x96C6;&#x7FA4;&#xFF0C;&#x5141;&#x8BB8;slave&#x8FDE;&#x63A5;&#x5E76;&#x540C;&#x6B65;&#x5230;master&#x8282;&#x70B9;&#x7684;&#x521D;&#x59CB;&#x5316;&#x65F6;&#x95F4;
+syncLimit   &#x7528;&#x4E8E;&#x96C6;&#x7FA4;&#xFF0C;master&#x3001;slave&#x5FC3;&#x8DF3;
+clientPort
+</code></pre><h2 id="&#x6570;&#x636E;&#x6A21;&#x578B;"><a name="&#x6570;&#x636E;&#x6A21;&#x578B;" class="plugin-anchor" href="#&#x6570;&#x636E;&#x6A21;&#x578B;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x6570;&#x636E;&#x6A21;&#x578B;</h2>
+<ul>
+<li>&#x6811;&#x5F62;&#x7ED3;&#x6784;</li>
+<li>&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x79F0;&#x4E3A;znode,&#x53EF;&#x4EE5;&#x6709;&#x5B50;&#x8282;&#x70B9;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6709;&#x6570;&#x636E;</li>
+<li>&#x8282;&#x70B9;&#x5206;&#x4E3A;&#x4E34;&#x65F6;&#x8282;&#x70B9;&#x3001;&#x6C38;&#x4E45;&#x8282;&#x70B9;,&#x4E34;&#x65F6;&#x8282;&#x70B9;session&#x5931;&#x6548;&#x5C31;&#x6D88;&#x5931;</li>
+<li>&#x6BCF;&#x4E2A;&#x8282;&#x70B9;&#x90FD;&#x6709;&#x5404;&#x81EA;&#x7684;&#x7248;&#x672C;&#x53F7;</li>
+<li>&#x5F53;&#x8282;&#x70B9;&#x6570;&#x636E;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x7248;&#x672C;&#x53F7;&#x7D2F;&#x52A0;</li>
+<li>&#x5220;&#x9664;/&#x4FEE;&#x6539;&#x8FC7;&#x65F6;&#x8282;&#x70B9;&#xFF0C;&#x7248;&#x672C;&#x53F7;&#x4E0D;&#x5339;&#x914D;&#xFF0C;&#x64CD;&#x4F5C;&#x5931;&#x8D25;</li>
+<li>zk&#x8282;&#x70B9;&#x5B58;&#x50A8;&#x7684;&#x6570;&#x636E;&#x4E0D;&#x5B9C;&#x8FC7;&#x5927;</li>
+<li>&#x8282;&#x70B9;&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E;acl&#xFF0C;&#x53EF;&#x901A;&#x8FC7;&#x6743;&#x9650;&#x6765;&#x9650;&#x5236;&#x7528;&#x6237;</li>
+</ul>
+<h2 id="&#x5E38;&#x7528;&#x547D;&#x4EE4;"><a name="&#x5E38;&#x7528;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x5E38;&#x7528;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5E38;&#x7528;&#x547D;&#x4EE4;</h2>
+<h2 id="watcher"><a name="watcher" class="plugin-anchor" href="#watcher"><i class="fa fa-link" aria-hidden="true"></i></a>watcher</h2>
+<h2 id="acl"><a name="acl" class="plugin-anchor" href="#acl"><i class="fa fa-link" aria-hidden="true"></i></a>acl</h2>
+<ul>
+<li>getAcl</li>
+<li>setAcl</li>
+<li>addauth</li>
+</ul>
+<h3 id="scheme"><a name="scheme" class="plugin-anchor" href="#scheme"><i class="fa fa-link" aria-hidden="true"></i></a>scheme</h3>
+<ul>
+<li>world</li>
+<li>auth</li>
+<li>digest</li>
+<li>ip</li>
+<li>super</li>
+</ul>
+<h3 id="permissionscdrwa"><a name="permissionscdrwa" class="plugin-anchor" href="#permissionscdrwa"><i class="fa fa-link" aria-hidden="true"></i></a>permissions(cdrwa)</h3>
+<ul>
+<li>create</li>
+<li>delete</li>
+<li>read</li>
+<li>write</li>
+<li>admin</li>
+</ul>
+<h3 id="terminal"><a name="terminal" class="plugin-anchor" href="#terminal"><i class="fa fa-link" aria-hidden="true"></i></a>terminal</h3>
+<pre><code>world:anyone:[permission]
+auth:[user]:[password]:[permissions]
+digest:[user]:[base64(sha1(password))]:[permissions]
+ip:[ip]:[permissions]
+
+addauth digest [user]:[password]
+</code></pre><h3 id="super-admin"><a name="super-admin" class="plugin-anchor" href="#super-admin"><i class="fa fa-link" aria-hidden="true"></i></a>super admin</h3>
+<pre><code>1. &#x7F16;&#x8F91;zkServer.sh
+</code></pre><h3 id="&#x56DB;&#x5B57;&#x547D;&#x4EE4;"><a name="&#x56DB;&#x5B57;&#x547D;&#x4EE4;" class="plugin-anchor" href="#&#x56DB;&#x5B57;&#x547D;&#x4EE4;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x56DB;&#x5B57;&#x547D;&#x4EE4;</h3>
+<pre><code>xxxx is not executed because it is not in the whitelist.
+</code></pre><p>&#x5982;&#x679C;&#x63D0;&#x793A;&#x4EE5;&#x4E0A;&#x5185;&#x5BB9;&#xFF0C;&#x5219;&#x7F16;&#x8F91;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x589E;&#x52A0;&#x3001;&#x4FEE;&#x6539;&#x4E00;&#x884C;&#xFF0C;&#x5982;&#x4E0B;&#x6240;&#x793A;</p>
+<pre><code>4lw.commands.whitelist=*
+4lw.commands.whitelist=xxxx,xxxx
+</code></pre><ul>
+<li>stat</li>
+<li>ruok</li>
+<li>dump</li>
+</ul>
+<h3 id="&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;"><a name="&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;" class="plugin-anchor" href="#&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;"><i class="fa fa-link" aria-hidden="true"></i></a>&#x5BA2;&#x6237;&#x7AEF;&#x5DE5;&#x5177;</h3>
+<ul>
+<li>&#x539F;&#x751F;api</li>
+<li>zkclient</li>
+<li>apache curator</li>
+</ul>
+<footer class="page-footer"><span class="copyright">Copyright &#xA9; axboy.cn 2022 all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2021-08-11 10:03:20
+</span></footer>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="redis.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: redis">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"zookeeper","level":"1.2.1.9","depth":3,"next":{"title":"golang","level":"1.2.2","depth":2,"ref":"","articles":[{"title":"安装环境","level":"1.2.2.1","depth":3,"path":"archived/golang/安装环境.md","ref":"./archived/golang/安装环境.md","articles":[]}]},"previous":{"title":"redis","level":"1.2.1.8","depth":3,"path":"archived/db/redis.md","ref":"./archived/db/redis.md","articles":[]},"dir":"ltr"},"config":{"plugins":["anchors@^0.7.1","expandable-chapters","chapter-fold","3-ba@^0.9.0","terminal@^0.3.2","code","codeblock-filename","tbfed-pagefooter@^0.0.1"],"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"Copyright &copy axboy.cn 2022","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"chapter-fold":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"codeblock-filename":{},"3-ba":{"configuration":"auto","token":"affdcc846dc488b83e30ede10e1d1abe"},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"terminal":{"copyButtons":true,"fade":false,"style":"flat"},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false},"anchors":{},"expandable-chapters":{}},"theme":"default","author":"axboy","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"笔记","language":"zh-hans","gitbook":"3.2.3"},"file":{"path":"archived/db/zookeeper.md","mtime":"2021-08-11T02:03:20.503Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2022-04-14T08:00:02.199Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-expandable-chapters/expandable-chapters.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-3-ba/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-terminal/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
